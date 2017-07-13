@@ -197,6 +197,10 @@ public class AndroidMavenPlugin implements Plugin<ProjectInternal> {
     private void configureAndroidScopeMappings(ConfigurationContainer configurations, Conf2ScopeMappingContainer mavenScopeMappings) {
         mavenScopeMappings.addMapping(COMPILE_PRIORITY, configurations.getByName(JavaPlugin.COMPILE_CONFIGURATION_NAME),
                 Conf2ScopeMappingContainer.COMPILE);
+        mavenScopeMappings.addMapping(COMPILE_PRIORITY, configurations.getByName(JavaPlugin.API_CONFIGURATION_NAME),
+            Conf2ScopeMappingContainer.COMPILE);
+        mavenScopeMappings.addMapping(COMPILE_PRIORITY, configurations.getByName(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME),
+            Conf2ScopeMappingContainer.COMPILE);
     }
 
     private void configureJavaScopeMappings(ConfigurationContainer configurations, Conf2ScopeMappingContainer mavenScopeMappings) {
